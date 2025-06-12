@@ -48,17 +48,18 @@
     text-shadow: 1px 1px 2px #b6ffb6;
   }
 
-  .meme-gif {
-    max-width: 250px;
+  .logo-svg {
+    width: 250px;
+    height: 250px;
     margin: 1rem auto 2rem;
     filter: drop-shadow(0 0 10px #0f5a00);
     border-radius: 20px;
-    animation: floaty 4s ease-in-out infinite;
+    animation: chocando 1.5s ease-in-out infinite;
   }
 
-  @keyframes floaty {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+  @keyframes chocando {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
   }
 
   .btn {
@@ -153,12 +154,47 @@
   <h1>PRIMO Token</h1>
   <p class="subtitle">La cripto más verde y rebelde para que fumes tranquilo y manejes tu plata sin bancos ni jefes.</p>
 
-  <img
-    class="meme-gif"
-    src="https://media.giphy.com/media/l2Je6C2AA6y8DcHiI/giphy.gif"
-    alt="Meme fumeta divertido de un hombre fumando"
-    aria-hidden="true"
-  />
+  <!-- SVG logo -->
+  <svg class="logo-svg" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo PRIMO Token dos puños chocándose con hojas de cannabis" >
+    <defs>
+      <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#22cc44"/>
+        <stop offset="100%" stop-color="#057a3b"/>
+      </radialGradient>
+      <filter id="neon" x="-50%" y="-50%" width="200%" height="200%" >
+        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00ff00"/>
+        <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#00ff00"/>
+      </filter>
+    </defs>
+
+    <!-- Fondo círculo con degradado -->
+    <circle cx="128" cy="128" r="120" fill="url(#grad1)" filter="url(#neon)" />
+
+    <!-- Puño izquierdo -->
+    <g transform="translate(70,90)">
+      <rect x="0" y="0" width="50" height="80" rx="15" ry="15" fill="#114d03" filter="url(#neon)" />
+      <!-- nudillos: hojas simples -->
+      <path d="M10 10 Q15 0 20 10 T30 10 Q35 0 40 10" fill="#22cc44" />
+      <circle cx="15" cy="30" r="8" fill="#22cc44" />
+      <circle cx="35" cy="30" r="8" fill="#22cc44" />
+      <path d="M5 60 Q25 80 45 60" stroke="#22cc44" stroke-width="5" fill="none" />
+    </g>
+
+    <!-- Puño derecho -->
+    <g transform="translate(135,90) scale(-1,1) translate(-50,0)">
+      <rect x="0" y="0" width="50" height="80" rx="15" ry="15" fill="#114d03" filter="url(#neon)" />
+      <!-- nudillos: hojas simples -->
+      <path d="M10 10 Q15 0 20 10 T30 10 Q35 0 40 10" fill="#22cc44" />
+      <circle cx="15" cy="30" r="8" fill="#22cc44" />
+      <circle cx="35" cy="30" r="8" fill="#22cc44" />
+      <path d="M5 60 Q25 80 45 60" stroke="#22cc44" stroke-width="5" fill="none" />
+    </g>
+
+    <!-- Texto PRIMO debajo -->
+    <text x="128" y="230" font-family="Orbitron, sans-serif" font-weight="900" font-size="40" fill="#fff" stroke="#22cc44" stroke-width="3" text-anchor="middle" letter-spacing="6" filter="url(#neon)">
+      PRIMO
+    </text>
+  </svg>
 
   <div>
     <button class="btn" onclick="window.open('https://t.me/primo_token', '_blank')">Telegram PRIMO</button>
