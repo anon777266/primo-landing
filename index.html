@@ -3,301 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PRIMO Token - Criptomoneda Verde</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>PRIMO Token | La cripto más PRIMO 🤑🔥</title>
   <style>
-    /* Variables de tema */
-    :root {
-      --green-primary: #22c55e;
-      --green-dark: #16a34a;
-      --background-dark: #0a0f0d;
-      --background-darker: #061009;
-      --text-light: #e0e7e9;
-      --text-muted: #a3bfa0;
-      --shadow-glow: 0 0 10px var(--green-primary);
-      --transition-fast: 0.25s ease;
-      --border-radius: 12px;
-      --max-width: 1100px;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
-    /* Reset */
-    *, *::before, *::after {
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--background-dark);
-      color: var(--text-light);
-      line-height: 1.6;
+      background: linear-gradient(135deg, #1de9b6, #00bfa5);
+      font-family: 'Comic Neue', cursive, sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center;
       overflow-x: hidden;
-      padding-bottom: 3rem;
-    }
-
-    a {
-      color: var(--green-primary);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-    }
-    a:hover, a:focus {
-      color: var(--green-dark);
-      outline: none;
-    }
-
-    /* Contenedor principal centrado */
-    .container {
-      max-width: var(--max-width);
-      width: 90%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      padding: 2rem 0;
-      z-index: 1;
-      position: relative;
-    }
-
-    /* Header */
-    header {
-      width: 100%;
-      padding: 1rem 2rem;
-      background: var(--background-darker);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      user-select: none;
+      padding: 1rem;
     }
 
     .logo {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--green-primary);
-      letter-spacing: 0.05em;
-      user-select: none;
-    }
-
-    nav a {
-      margin-left: 1.8rem;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    nav a:first-child {
-      margin-left: 0;
-    }
-
-    nav a:hover {
-      color: var(--green-dark);
-    }
-
-    /* Hero section */
-    main.hero {
-      background: linear-gradient(135deg, #022409, #0a3a11);
-      border-radius: var(--border-radius);
-      padding: 3rem 3.5rem;
-      max-width: 900px;
-      box-shadow:
-        0 0 20px var(--green-primary),
-        0 10px 40px rgba(34, 197, 94, 0.3);
-      text-align: center;
-      user-select: none;
-    }
-
-    main.hero h1 {
-      font-size: 3.8rem;
+      font-size: 5rem;
+      font-weight: 900;
+      color: #ff6f00;
+      text-shadow:
+        2px 2px #000,
+        0 0 10px #ff6f00,
+        0 0 30px #ff6f00;
+      animation: bounce 2s infinite;
       margin-bottom: 1rem;
-      color: var(--green-primary);
-      text-shadow: 0 0 12px var(--green-primary);
     }
 
-    main.hero p {
-      font-size: 1.4rem;
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .slogan {
+      font-size: 1.8rem;
       margin-bottom: 2rem;
-      color: var(--text-muted);
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
+      text-shadow: 1px 1px 3px #000;
+      letter-spacing: 2px;
+      user-select: text;
     }
 
-    /* Botones CTA (call to action) */
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.6rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      background-color: var(--green-primary);
-      color: var(--background-dark);
-      font-weight: 700;
-      padding: 0.9rem 2rem;
+    .btn-join {
+      background: #ff6f00;
       border: none;
-      border-radius: 9999px;
+      border-radius: 50px;
+      padding: 1.5rem 4rem;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
       cursor: pointer;
-      font-size: 1.1rem;
-      box-shadow: 0 0 8px var(--green-primary);
-      transition: background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
-      text-decoration: none;
+      box-shadow: 0 0 15px #ff6f00;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
       user-select: none;
     }
-    .btn:hover, .btn:focus {
-      background-color: var(--green-dark);
-      box-shadow: 0 0 20px var(--green-dark);
-      transform: scale(1.05);
-      outline: none;
+
+    .btn-join:hover {
+      animation: shake 0.5s;
+      box-shadow: 0 0 30px #ff9100, 0 0 40px #ff9100 inset;
+      transform: scale(1.1);
     }
 
-    /* Íconos SVG pequeños */
-    .btn svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--background-dark);
-      flex-shrink: 0;
+    @keyframes shake {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      20% { transform: translate(-5px, 0) rotate(-5deg); }
+      40% { transform: translate(5px, 0) rotate(5deg); }
+      60% { transform: translate(-5px, 0) rotate(-5deg); }
+      80% { transform: translate(5px, 0) rotate(5deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
     }
 
-    /* Características */
-    section.features {
-      margin-top: 4rem;
-      max-width: var(--max-width);
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 2rem;
-      padding: 0 1rem;
+    .emoji {
+      font-size: 3rem;
+      margin-left: 1rem;
+      animation: pulse 2s infinite;
     }
 
-    .feature-card {
-      background: rgba(34, 197, 94, 0.12);
-      border-radius: var(--border-radius);
-      padding: 1.8rem;
-      box-shadow: 0 8px 30px rgba(34, 197, 94, 0.15);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
     }
 
-    .feature-card:hover {
-      box-shadow: 0 12px 40px rgba(34, 197, 94, 0.4);
-      transform: translateY(-10px);
-    }
-
-    .feature-card h3 {
-      font-weight: 700;
-      color: var(--green-primary);
-      margin-bottom: 0.7rem;
+    .desc {
+      margin-top: 1.5rem;
       font-size: 1.3rem;
+      max-width: 450px;
+      text-shadow: 1px 1px 4px #000;
       user-select: text;
+      line-height: 1.4;
     }
 
-    .feature-card p {
-      font-size: 1rem;
-      color: var(--text-muted);
+    .purpose {
+      background: rgba(255, 111, 0, 0.15);
+      border: 2px solid #ff6f00;
+      border-radius: 15px;
+      padding: 1rem 2rem;
+      margin-top: 3rem;
+      max-width: 500px;
+      font-size: 1.1rem;
       user-select: text;
+      box-shadow: 0 0 10px #ff6f00;
+      text-align: left;
     }
 
-    /* Footer */
     footer {
       margin-top: 5rem;
-      width: 100%;
-      background: var(--background-darker);
-      padding: 1.5rem 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--text-muted);
+      font-size: 1rem;
+      color: #fff;
+      text-shadow: 1px 1px 4px #000;
       user-select: none;
     }
 
-    /* Animaciones */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    footer a {
+      color: #fff;
+      text-decoration: underline wavy #ff6f00;
+      font-weight: bold;
+      margin: 0 0.5rem;
     }
 
-    main.hero, section.features, footer {
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      main.hero {
-        padding: 2rem 2rem;
-      }
-      main.hero h1 {
-        font-size: 2.8rem;
-      }
-      .btn {
-        font-size: 1rem;
-        padding: 0.8rem 1.6rem;
-      }
-      section.features {
-        grid-template-columns: 1fr;
-        padding: 0 0.5rem;
-      }
-      header {
-        padding: 1rem 1rem;
-      }
-      nav a {
-        margin-left: 1rem;
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo" aria-label="Logo PRIMO Token">PRIMO Token</div>
-    <nav aria-label="Menú principal">
-      <a href="#features">Características</a>
-      <a href="#community">Comunidad</a>
-      <a href="https://primo-token.example.com" target="_blank" rel="noopener noreferrer">Sitio oficial</a>
-    </nav>
-  </header>
+  <div class="logo" aria-label="Logo PRIMO Token">PRIMO</div>
+  <div class="slogan">
+    La cripto más <span style="color:#ff9100">PRIMO</span> del universo 💎🚀
+  </div>
 
-  <main class="hero" role="main">
-    <h1>PRIMO Token</h1>
-    <p>
-      La criptomoneda estable que apoya la legalización global del cannabis, impulsando un futuro verde y sostenible.
-    </p>
+  <button class="btn-join" onclick="window.open('https://t.me/primo_token', '_blank')">
+    ¡ÚNETE YA! <span class="emoji">🔥</span>
+  </button>
 
-    <div class="cta-buttons" id="community" aria-label="Enlaces a la comunidad y redes sociales">
-      <a href="https://t.me/primo_token" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Únete al Telegram de PRIMO Token">
-        <!-- Telegram SVG icon -->
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" >
-          <path d="M9.998 15.002l-.334 4.743c.478 0 .685-.206.935-.453l2.24-2.138 4.644 3.406c.854.472 1.464.224 1.68-.797l3.042-14.343c.283-1.327-.48-1.927-1.367-1.597L3.655 9.48c-1.298.511-1.282 1.23-.22 1.555l5.7 1.777 13.233-8.326" />
-        </svg>
-        Telegram
-      </a>
-      <a href="https://twitter.com/primo_token" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Sigue a PRIMO Token en Twitter">
-        <!-- Twitter SVG icon -->
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" >
-          <path d="M23.954 4.569c-.885.39-1.83.654-2.825.775a4.93 4.93 0 0 0 2.163-2.724c-.948.555-2.005.959-3.127 1.184a4.916 4.916 0 0 0-8.38 4.482A13.948 13.948 0 0 1 1.671 3.149a4.918 4.918 0 0 0 1.523 6.573 4.902 4.902 0 0 1-2.228-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.923 4.923 0 0 0 4.604 3.419 9.869 9.869 0 0 1-6.102 2.104c-.397 0-.79-.023-1.17-.068a13.955 13.955 0 0 0 7.557 2.213c9.054 0 14.002-7.496 14.002-13.986 0-.21 0-.423-.015-.633a10.012 10.012 0 0 0 2.46-2.548l-.047-.02z"/>
-        </svg>
-        Twitter
-      </a>
-      <a href="https://discord.gg/primo_token" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Únete al Discord de PRIMO Token">
-        <!-- Discord SVG icon -->
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" >
-          <path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561 19.9 19.9 0 0 0 5.993 3.0475.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057 13.1343 13.1343 0 0 1-1.872-.8997.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.927 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.12.099.246.1981.372.2924a.0766.0766 0 0 1-.006.1276 12.5356 12.5356 0 0 1-1.873.8994.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286 19.9023 19.9023 0 0 0 6.004-3.054.082.082 0 0 0 .03-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.4189 0 1.3333-.9556 2.419-2.1569 2.419zm7.9748 0c-1.1824 0-2.1568-1.0857-2.1568-2.419 0-1.3332.9554-2.4189 2.1568-2.4189 1.2108 0 2.1757 1.0952 2.1569 2.4189 0 1.3333-.946 2.419-2.1569 2.419z"/>
-        </svg>
-        Discord
-      </a>
-      <a href="https://primo-token.example.com" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Visita el sitio oficial de PRIMO Token">
-        <!-- Globe SVG icon -->
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" >
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 5.522 0 10-4.477 10-10 0-5.523-4.478-10-10-10zm8.95 8h-3.174a15.795 15.795 0 0 0-1.13-3.54A8.02 8.02 0 0 1 20.95 10zm-8.95-8a8.05 8.05 0 0 1 3.79.84A17.914 17.914 0 0 0 12 6.5c-.417 0-.832.014-1.243.04A17.959 17.959 0 0 0 8.216 3.35 8.05 8.05 0 0 1 12 2zm-7.768 4.46A15.801 15.801 0 0 0 5.226 10H2.1a8.018 8.018 0 0 1 2.132-3.54zM4.5 12c0-.334.034-.66.084-.978a16.086 16.086 0 0 1 1.766 4.011c-.02-.174-.035-.35-.035-.533 0-1.252.529-2.39 1.375
+  <p class="desc">
+    PRIMO Token no es solo otra criptomoneda meme... es un movimiento.  
+  </p>
+
+  <div class="purpose">
+    🌿 <strong>Propósito:</strong> Legalizar el cannabis a nivel global y promover el comercio libre, sin bancos ni entidades financieras de por medio. PRIMO es para la gente que quiere libertad financiera real, sin intermediarios y sin reglas absurdas.  
+    <br /><br />
+    💸 Comercio peer-to-peer, rápido y sin complicaciones. Porque el futuro es PRIMO.
+  </div>
+
+  <footer>
+    Síguenos en
+    <a href="https://twitter.com/primo_token" target="_blank" rel="noopener noreferrer">Twitter</a> |
+    <a href="https://discord.gg/primo_token" target="_blank" rel="noopener noreferrer">Discord</a> |
+    <a href="https://t.me/primo_token" target="_blank" rel="noopener noreferrer">Telegram</a>
+  </footer>
+</body>
+</html>
