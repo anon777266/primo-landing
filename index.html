@@ -12,31 +12,107 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      background: linear-gradient(135deg, #1de9b6, #00bfa5);
       font-family: 'Comic Neue', cursive, sans-serif;
-      color: #fff;
+      color: #e0f7da;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       text-align: center;
+      background: linear-gradient(135deg, #1b3b1b, #0d1f0d);
       overflow-x: hidden;
       user-select: none;
+      position: relative;
       padding: 1rem;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%2366bb66" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s8-4.5 8-10-3.6-6-8-6-8 2.5-8 6 8 10 8 10z"/></svg>');
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+      background-repeat: repeat;
+      animation: movePattern 120s linear infinite;
+      filter: drop-shadow(0 0 2px #2a6f2a);
+    }
+
+    @keyframes movePattern {
+      0% { background-position: 0 0; }
+      100% { background-position: 400px 400px; }
+    }
+
+    .smoke {
+      position: fixed;
+      top: -20%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(200,255,180,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      animation: drift 30s linear infinite;
+      opacity: 0.4;
+      pointer-events: none;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .smoke:nth-child(2) {
+      top: 30%;
+      left: 40%;
+      width: 250px;
+      height: 250px;
+      animation-duration: 40s;
+      opacity: 0.3;
+      filter: blur(50px);
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: translateX(-50%) translateY(40px) scale(1.1);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 0.4;
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+      width: 90%;
+      background: rgba(15, 45, 15, 0.8);
+      border-radius: 25px;
+      box-shadow: 0 0 30px #7ac943;
+      padding: 2rem 3rem;
+      user-select: text;
     }
 
     .logo {
       font-size: 5rem;
       font-weight: 900;
-      color: #ff6f00;
+      color: #a2d149;
       text-shadow:
-        2px 2px #000,
-        0 0 10px #ff6f00,
-        0 0 30px #ff6f00;
+        2px 2px #103910,
+        0 0 10px #a2d149,
+        0 0 30px #a2d149;
       animation: bounce 2s infinite;
       margin-bottom: 1rem;
+      user-select: none;
     }
 
     @keyframes bounce {
@@ -47,30 +123,33 @@
     .slogan {
       font-size: 1.8rem;
       margin-bottom: 2rem;
-      text-shadow: 1px 1px 3px #000;
+      text-shadow: 1px 1px 3px #103910;
       letter-spacing: 2px;
       user-select: text;
     }
 
     .btn-join {
-      background: #ff6f00;
+      background: #7ac943;
       border: none;
       border-radius: 50px;
       padding: 1.5rem 4rem;
       font-size: 2rem;
       font-weight: 900;
-      color: #fff;
+      color: #103910;
       cursor: pointer;
-      box-shadow: 0 0 15px #ff6f00;
+      box-shadow: 0 0 15px #a2d149;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
       user-select: none;
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 300px;
     }
 
     .btn-join:hover {
       animation: shake 0.5s;
-      box-shadow: 0 0 30px #ff9100, 0 0 40px #ff9100 inset;
+      box-shadow: 0 0 30px #a2d149, 0 0 40px #a2d149 inset;
       transform: scale(1.1);
     }
 
@@ -98,66 +177,106 @@
       margin-top: 1.5rem;
       font-size: 1.3rem;
       max-width: 450px;
-      text-shadow: 1px 1px 4px #000;
+      text-shadow: 1px 1px 4px #103910;
       user-select: text;
       line-height: 1.4;
     }
 
     .purpose {
-      background: rgba(255, 111, 0, 0.15);
-      border: 2px solid #ff6f00;
+      background: rgba(122, 201, 67, 0.15);
+      border: 2px solid #7ac943;
       border-radius: 15px;
       padding: 1rem 2rem;
       margin-top: 3rem;
       max-width: 500px;
       font-size: 1.1rem;
       user-select: text;
-      box-shadow: 0 0 10px #ff6f00;
+      box-shadow: 0 0 10px #7ac943;
       text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .motivation {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #d6f57d;
+      text-shadow: 0 0 10px #a2d149;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+      user-select: text;
     }
 
     footer {
-      margin-top: 5rem;
+      margin-top: 4rem;
       font-size: 1rem;
-      color: #fff;
-      text-shadow: 1px 1px 4px #000;
+      color: #a2d149;
+      text-shadow: 1px 1px 4px #103910;
       user-select: none;
     }
 
     footer a {
-      color: #fff;
-      text-decoration: underline wavy #ff6f00;
+      color: #a2d149;
+      text-decoration: underline wavy #7ac943;
       font-weight: bold;
       margin: 0 0.5rem;
     }
 
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 3.5rem;
+      }
+      .btn-join {
+        padding: 1rem 2.5rem;
+        font-size: 1.5rem;
+        max-width: 100%;
+      }
+      .purpose, .desc, .motivation {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="logo" aria-label="Logo PRIMO Token">PRIMO</div>
-  <div class="slogan">
-    La cripto más <span style="color:#ff9100">PRIMO</span> del universo 💎🚀
+  <div class="smoke"></div>
+  <div class="smoke"></div>
+
+  <div class="content">
+    <div class="logo" aria-label="Logo PRIMO Token">PRIMO</div>
+    <div class="slogan">
+      La cripto más <span style="color:#d6f57d">PRIMO</span> del universo 💎🚀
+    </div>
+
+    <button class="btn-join" onclick="window.open('https://t.me/primo_token', '_blank')">
+      ¡ÚNETE YA! <span class="emoji">🔥</span>
+    </button>
+
+    <p class="desc">
+      PRIMO Token no es solo otra criptomoneda meme... es un movimiento.  
+    </p>
+
+    <div class="purpose">
+      🌿 <strong>Propósito:</strong> Legalizar el cannabis a nivel global y promover el comercio libre, sin bancos ni entidades financieras de por medio. PRIMO es para la gente que quiere libertad financiera real, sin intermediarios y sin reglas absurdas.  
+      <br /><br />
+      💸 Comercio peer-to-peer, rápido y sin complicaciones. Porque el futuro es PRIMO.
+    </div>
+
+    <div class="motivation" aria-label="Mensaje motivacional">
+      “No esperes el momento perfecto, haz que este momento sea perfecto.  
+      Con PRIMO, cultivamos libertad, respeto y prosperidad para todos.  
+      Únete al cambio, porque juntos somos más fuertes y PRIMO es la llave.”  
+    </div>
+
+    <footer>
+      Síguenos en
+      <a href="https://twitter.com/primo_token" target="_blank" rel="noopener noreferrer">Twitter</a> |
+      <a href="https://discord.gg/primo_token" target="_blank" rel="noopener noreferrer">Discord</a> |
+      <a href="https://t.me/primo_token" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </footer>
   </div>
-
-  <button class="btn-join" onclick="window.open('https://t.me/primo_token', '_blank')">
-    ¡ÚNETE YA! <span class="emoji">🔥</span>
-  </button>
-
-  <p class="desc">
-    PRIMO Token no es solo otra criptomoneda meme... es un movimiento.  
-  </p>
-
-  <div class="purpose">
-    🌿 <strong>Propósito:</strong> Legalizar el cannabis a nivel global y promover el comercio libre, sin bancos ni entidades financieras de por medio. PRIMO es para la gente que quiere libertad financiera real, sin intermediarios y sin reglas absurdas.  
-    <br /><br />
-    💸 Comercio peer-to-peer, rápido y sin complicaciones. Porque el futuro es PRIMO.
-  </div>
-
-  <footer>
-    Síguenos en
-    <a href="https://twitter.com/primo_token" target="_blank" rel="noopener noreferrer">Twitter</a> |
-    <a href="https://discord.gg/primo_token" target="_blank" rel="noopener noreferrer">Discord</a> |
-    <a href="https://t.me/primo_token" target="_blank" rel="noopener noreferrer">Telegram</a>
-  </footer>
 </body>
 </html>
