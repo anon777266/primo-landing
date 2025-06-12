@@ -1,212 +1,82 @@
-<!DOCTYPE html>
-<html lang="es">
+  <!DOCTYPE html><html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PRIMO Token - La Cripto de los Fumetas</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Comic+Neue:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Comic+Neue:wght@700&display=swap');body { margin: 0; padding: 0; background: linear-gradient(135deg, #1bff80 0%, #064d26 100%); font-family: 'Comic Neue', cursive; color: #000; overflow-x: hidden; user-select: none; }
 
-  body {
-    margin: 0; padding: 0;
-    background: linear-gradient(135deg, #23ff6d 0%, #057a3b 100%);
-    font-family: 'Comic Neue', cursive;
-    color: #000;
-    overflow-x: hidden;
-    user-select: none;
-  }
+.container { max-width: 900px; margin: 3rem auto; background: #fff7e0; border: 5px dashed #22cc44; border-radius: 25px; box-shadow: 0 0 40px #0f5a00aa inset; padding: 2rem 3rem; text-align: center; position: relative; }
 
-  .container {
-    max-width: 900px;
-    margin: 3rem auto;
-    background: #fff7d1;
-    border: 5px dashed #22cc44;
-    border-radius: 25px;
-    box-shadow: 0 0 40px #0f5a00aa inset;
-    padding: 2rem 3rem;
-    text-align: center;
-    position: relative;
-  }
+h1 { font-family: 'Orbitron', sans-serif; font-size: 4rem; color: #00ff00; text-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00, 0 0 25px #22cc44, 0 0 40px #22cc44, 0 0 70px #22cc44; margin-bottom: 0.3rem; }
 
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 4rem;
-    color: #00ff00;
-    text-shadow:
-      0 0 5px #00ff00,
-      0 0 15px #00ff00,
-      0 0 25px #22cc44,
-      0 0 40px #22cc44,
-      0 0 70px #22cc44;
-    margin-bottom: 0.3rem;
-  }
+.subtitle { font-size: 1.5rem; margin-bottom: 1rem; color: #064d26; text-shadow: 1px 1px 2px #b6ffb6; }
 
-  .subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #0a3a01;
-    text-shadow: 1px 1px 2px #b6ffb6;
-  }
+.logo-svg { width: 250px; height: 250px; margin: 1rem auto 2rem; filter: drop-shadow(0 0 10px #0f5a00); border-radius: 20px; animation: chocando 1.5s ease-in-out infinite; }
 
-  .logo-svg {
-    width: 250px;
-    height: 250px;
-    margin: 1rem auto 2rem;
-    filter: drop-shadow(0 0 10px #0f5a00);
-    border-radius: 20px;
-    animation: chocando 1.5s ease-in-out infinite;
-  }
+@keyframes chocando { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
 
-  @keyframes chocando {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(10px); }
-  }
+.btn { background: #22cc44; color: #000; font-weight: 700; font-size: 1.2rem; padding: 1rem 3rem; border-radius: 40px; border: 4px solid #064d26; cursor: pointer; box-shadow: 0 0 15px #22cc44, 0 0 35px #22cc44 inset; transition: transform 0.3s ease, box-shadow 0.3s ease; user-select: none; margin: 0 0.5rem; }
 
-  .btn {
-    background: #22cc44;
-    color: #000;
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 1rem 3rem;
-    border-radius: 40px;
-    border: 4px solid #0a3a01;
-    cursor: pointer;
-    box-shadow:
-      0 0 15px #22cc44,
-      0 0 35px #22cc44 inset;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    user-select: none;
-    margin: 0 0.5rem;
-  }
+.btn:hover { transform: scale(1.1) rotate(-4deg); box-shadow: 0 0 25px #00ff00, 0 0 60px #00ff00 inset; }
 
-  .btn:hover {
-    transform: scale(1.1) rotate(-4deg);
-    box-shadow:
-      0 0 25px #00ff00,
-      0 0 60px #00ff00 inset;
-  }
+.quote { margin-top: 2rem; font-size: 1.25rem; font-weight: 700; color: #155a00; text-shadow: 0 0 7px #aaffaa; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-  .quote {
-    margin-top: 2rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #155a00;
-    text-shadow: 0 0 7px #aaffaa;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.footer { margin-top: 3rem; font-size: 0.9rem; color: #064d26; user-select: text; }
 
-  .footer {
-    margin-top: 3rem;
-    font-size: 0.9rem;
-    color: #0a3a01;
-    user-select: text;
-  }
+.leaf { position: fixed; width: 40px; height: 40px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cannabis_leaf_icon.svg/1024px-Cannabis_leaf_icon.svg.png') no-repeat center/contain; opacity: 0.2; animation: drift 20s linear infinite; pointer-events: none; filter: drop-shadow(0 0 5px #0f5a00); }
 
-  /* Little leaf floating in bg */
-  .leaf {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cannabis_leaf_icon.svg/1024px-Cannabis_leaf_icon.svg.png') no-repeat center/contain;
-    opacity: 0.2;
-    animation: drift 20s linear infinite;
-    pointer-events: none;
-    filter: drop-shadow(0 0 5px #0f5a00);
-  }
+.leaf:nth-child(1) { top: 10%; left: -5%; animation-delay: 0s; } .leaf:nth-child(2) { top: 40%; left: -10%; animation-delay: 7s; animation-duration: 25s; } .leaf:nth-child(3) { top: 70%; left: -7%; animation-delay: 3s; animation-duration: 30s; }
 
-  .leaf:nth-child(1) {
-    top: 10%;
-    left: -5%;
-    animation-delay: 0s;
-  }
-  .leaf:nth-child(2) {
-    top: 40%;
-    left: -10%;
-    animation-delay: 7s;
-    animation-duration: 25s;
-  }
-  .leaf:nth-child(3) {
-    top: 70%;
-    left: -7%;
-    animation-delay: 3s;
-    animation-duration: 30s;
-  }
+@keyframes drift { 0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.2; } 50% { opacity: 0.4; } 100% { transform: translateX(120vw) translateY(-30vh) rotate(360deg); opacity: 0; } } </style>
 
-  @keyframes drift {
-    0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.2;}
-    50% { opacity: 0.4;}
-    100% { transform: translateX(120vw) translateY(-30vh) rotate(360deg); opacity: 0;}
-  }
-
-</style>
 </head>
 <body>
-
-<!-- Floating leaves -->
 <div class="leaf"></div>
 <div class="leaf"></div>
-<div class="leaf"></div>
-
-<div class="container" role="main" aria-label="PRIMO Token página principal">
-
+<div class="leaf"></div><div class="container" role="main" aria-label="PRIMO Token página principal">
   <h1>PRIMO Token</h1>
-  <p class="subtitle">La cripto más verde y rebelde para que fumes tranquilo y manejes tu plata sin bancos ni jefes.</p>
-
-  <!-- SVG logo -->
-  <svg class="logo-svg" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo PRIMO Token dos puños chocándose con hojas de cannabis" >
+  <p class="subtitle">La cripto más verde y rebelde para que fumes tranquilo y manejes tu plata sin bancos ni jefes.</p>  <!-- Nuevo logo con porros y humo -->  <svg class="logo-svg" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo PRIMO Token dos manos fumando cannabis">
     <defs>
       <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
         <stop offset="0%" stop-color="#22cc44"/>
         <stop offset="100%" stop-color="#057a3b"/>
       </radialGradient>
-      <filter id="neon" x="-50%" y="-50%" width="200%" height="200%" >
+      <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
         <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00ff00"/>
         <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#00ff00"/>
       </filter>
-    </defs>
+    </defs><circle cx="128" cy="128" r="120" fill="url(#grad1)" filter="url(#neon)" />
 
-    <!-- Fondo círculo con degradado -->
-    <circle cx="128" cy="128" r="120" fill="url(#grad1)" filter="url(#neon)" />
+<g transform="translate(60,90)">
+  <rect x="0" y="0" width="50" height="80" rx="15" ry="15" fill="#114d03" filter="url(#neon)" />
+  <path d="M10 10 Q15 0 20 10 T30 10 Q35 0 40 10" fill="#22cc44" />
+  <circle cx="15" cy="30" r="8" fill="#22cc44" />
+  <circle cx="35" cy="30" r="8" fill="#22cc44" />
+  <path d="M5 60 Q25 80 45 60" stroke="#22cc44" stroke-width="5" fill="none" />
+  <rect x="45" y="20" width="30" height="8" rx="3" ry="3" fill="#ccc" stroke="#222" stroke-width="1" transform="rotate(15 45 20)" />
+  <path d="M80 15 Q90 5 100 15 T120 15" stroke="#aaffaa" stroke-width="2" fill="none" opacity="0.4" />
+</g>
 
-    <!-- Puño izquierdo -->
-    <g transform="translate(70,90)">
-      <rect x="0" y="0" width="50" height="80" rx="15" ry="15" fill="#114d03" filter="url(#neon)" />
-      <!-- nudillos: hojas simples -->
-      <path d="M10 10 Q15 0 20 10 T30 10 Q35 0 40 10" fill="#22cc44" />
-      <circle cx="15" cy="30" r="8" fill="#22cc44" />
-      <circle cx="35" cy="30" r="8" fill="#22cc44" />
-      <path d="M5 60 Q25 80 45 60" stroke="#22cc44" stroke-width="5" fill="none" />
-    </g>
+<g transform="translate(146,90) scale(-1,1)">
+  <rect x="0" y="0" width="50" height="80" rx="15" ry="15" fill="#114d03" filter="url(#neon)" />
+  <path d="M10 10 Q15 0 20 10 T30 10 Q35 0 40 10" fill="#22cc44" />
+  <circle cx="15" cy="30" r="8" fill="#22cc44" />
+  <circle cx="35" cy="30" r="8" fill="#22cc44" />
+  <path d="M5 60 Q25 80 45 60" stroke="#22cc44" stroke-width="5" fill="none" />
+  <rect x="45" y="20" width="30" height="8" rx="3" ry="3" fill="#ccc" stroke="#222" stroke-width="1" transform="rotate(15 45 20)" />
+  <path d="M80 15 Q90 5 100 15 T120 15" stroke="#aaffaa" stroke-width="2" fill="none" opacity="0.4" />
+</g>
 
-    <!-- Puño derecho -->
-    <g transform="translate(135,90) scale(-1,1) translate(-50,0)">
-      <rect x="0" y="0" width="50" height="80" rx="15" ry="15" fill="#114d03" filter="url(#neon)" />
-      <!-- nudillos: hojas simples -->
-      <path d="M10 10 Q15 0 20 10 T30 10 Q35 0 40 10" fill="#22cc44" />
-      <circle cx="15" cy="30" r="8" fill="#22cc44" />
-      <circle cx="35" cy="30" r="8" fill="#22cc44" />
-      <path d="M5 60 Q25 80 45 60" stroke="#22cc44" stroke-width="5" fill="none" />
-    </g>
+<text x="128" y="230" font-family="Orbitron, sans-serif" font-weight="900" font-size="40" fill="#fff" stroke="#22cc44" stroke-width="3" text-anchor="middle" letter-spacing="6" filter="url(#neon)">
+  PRIMO
+</text>
 
-    <!-- Texto PRIMO debajo -->
-    <text x="128" y="230" font-family="Orbitron, sans-serif" font-weight="900" font-size="40" fill="#fff" stroke="#22cc44" stroke-width="3" text-anchor="middle" letter-spacing="6" filter="url(#neon)">
-      PRIMO
-    </text>
-  </svg>
-
-  <div>
+  </svg>  <div>
     <button class="btn" onclick="window.open('https://t.me/primo_token', '_blank')">Telegram PRIMO</button>
     <button class="btn" onclick="window.open('https://twitter.com/primo_token', '_blank')">Twitter PRIMO</button>
-  </div>
-
-  <p class="quote" aria-live="polite" aria-atomic="true">
-    “Con PRIMO el humo es libre y tu dinero también.”
-  </p>
-
+  </div>  <p class="quote">“Con PRIMO el humo es libre y tu dinero también.”</p>
   <p class="footer">Powered by PRIMO Token — Legaliza, comercia y vive sin cadenas</p>
 </div>
-
 </body>
 </html>
