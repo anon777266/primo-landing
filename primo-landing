@@ -1,50 +1,52 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PRIMO Token</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0e0e0e;
-      color: #ffffff;
-      height: 100vh;
+      background: #0e0e0e;
+      color: white;
+      font-family: sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
       text-align: center;
-      flex-direction: column;
     }
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
     p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
       color: #ccc;
       max-width: 500px;
+      margin-bottom: 2rem;
     }
     button {
+      background: #22c55e;
+      color: black;
       padding: 0.75rem 1.5rem;
-      font-size: 1rem;
       border: none;
-      border-radius: 0.5rem;
-      background-color: #22c55e;
-      color: #000;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      font-size: 1rem;
+      transition: background 0.3s;
     }
     button:hover {
-      background-color: #16a34a;
+      background: #16a34a;
     }
   </style>
 </head>
 <body>
   <h1>PRIMO Token</h1>
-  <p>Una criptomoneda global que impulsa la legalización del cannabis y ofrece estabilidad financiera. ¡El futuro ya está aquí!</p>
-  <button onclick="window.location.href='https://t.me/primo_token'">Unirse a la comunidad</button>
+  <p>La criptomoneda que apoya la legalización global del cannabis y busca ser una moneda estable.</p>
+  <button onclick="window.location.href='https://t.me/primo_token'">
+    Únete a la comunidad
+  </button>
 </body>
 </html>
