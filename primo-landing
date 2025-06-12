@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRIMO Token</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e0e0e;
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+      max-width: 500px;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: #22c55e;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #16a34a;
+    }
+  </style>
+</head>
+<body>
+  <h1>PRIMO Token</h1>
+  <p>Una criptomoneda global que impulsa la legalización del cannabis y ofrece estabilidad financiera. ¡El futuro ya está aquí!</p>
+  <button onclick="window.location.href='https://t.me/primo_token'">Unirse a la comunidad</button>
+</body>
+</html>
